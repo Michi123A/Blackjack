@@ -23,21 +23,23 @@ colors = ["cyan", "lime", "deep pink", "yellow", "dark violet"]
 pen.pensize(5)
 pen.color(random.choice(colors))
 def move_forward():
-    if pen.xcor() > 287 or pen.xcor() < -287: #make sure pen does not go over border
+    if pen.xcor() > 285 or pen.xcor() < -285: #make sure pen does not go over border
         pen.penup()
-        pen.right(180)
-        pen.forward(10)
+        pen.backward(30)
+        pen.right(90)
+        pen.forward(15)
         pen.pendown()
-    elif pen.ycor() > 287 or pen.ycor() < -287:
+    elif pen.ycor() > 285 or pen.ycor() < -285:
         pen.penup()
-        pen.right(180)
-        pen.forward(10)
+        pen.backward(30)
+        pen.right(90)
+        pen.forward(15)
         pen.pendown()
     pen.forward(10)
     pen.color(random.choice(colors))
 
-def move_backward():
-    pen.backward(10)
+#def move_backward():
+ #   pen.backward(10)
 
 def move_left():
     pen.left(10)
@@ -54,7 +56,7 @@ def clear_screen():
 screen.listen()
 
 screen.onkey(key="space", fun=move_forward)
-screen.onkey(key="Down", fun=move_backward)
+#screen.onkey(key="Down", fun=move_backward)
 screen.onkey(key="Left", fun=move_left)
 screen.onkey(key="Right", fun=move_right)
 screen.onkey(key="c", fun=clear_screen)
